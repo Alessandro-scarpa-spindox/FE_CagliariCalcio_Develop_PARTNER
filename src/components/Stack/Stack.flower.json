@@ -1,0 +1,87 @@
+{
+    "type": "component",
+    "name": "Stack",
+    "category": "UI",
+    "description": "Stack component",
+    "editing": [
+        {
+            "type": "ButtonGroup",
+            "id": "flexDirection",
+            "label": "Flex direction",
+            "default": "column",
+            "options": [
+                {
+                    "label": "Row",
+                    "value": "row"
+                },
+                {
+                    "label": "Column",
+                    "value": "column"
+                },
+                {
+                    "label": "Row reverse",
+                    "value": "row-reverse"
+                },
+                {
+                    "label": "Column reverse",
+                    "value": "column-reverse"
+                }
+            ]
+        },
+        {
+            "type": "ButtonGroup",
+            "id": "justifyContent",
+            "label": "Justify Content",
+            "options": [
+                {
+                    "label": "Start",
+                    "value": "flex-start"
+                },
+                {
+                    "label": "Center",
+                    "value": "center"
+                },
+                {
+                    "label": "Space Between",
+                    "value": "space-between"
+                },
+                {
+                    "label": "Sapce Around",
+                    "value": "space-around"
+                },
+                {
+                    "label": "End",
+                    "value": "flex-end"
+                }
+            ]
+        },
+        {
+            "type": "ButtonGroup",
+            "id": "alignItems",
+            "label": "Align Items",
+            "default": "start",
+            "options": [
+                {
+                    "label": "Start",
+                    "value": "flex-start"
+                },
+                {
+                    "label": "Center",
+                    "value": "center"
+                },
+                {
+                    "label": "Space Between",
+                    "value": "space-between"
+                },
+                {
+                    "label": "Sapce Around",
+                    "value": "space-around"
+                },
+                {
+                    "label": "End",
+                    "value": "flex-end"
+                }
+            ]
+        }
+    ]
+}

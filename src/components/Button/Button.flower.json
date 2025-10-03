@@ -1,0 +1,23 @@
+{
+    "type": "component",
+    "name": "Button",
+    "category": "UI",
+    "description": "Button component",
+    "editing":[
+        {
+            "type": "Input",
+            "id":"title",
+            "label":"Button title"
+        },
+        {
+            "type": "Rules",
+            "id":"rules",
+            "label":"Rules"
+        },
+        {
+            "type": "Switch",
+            "id":"alwaysDisplay",
+            "label":"Always dispaly"
+        }
+    ]
+}

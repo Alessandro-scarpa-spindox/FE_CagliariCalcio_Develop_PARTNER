@@ -1,0 +1,278 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "onboarding",
+  "apps": [],
+  "elements": {
+    "Start": {
+      "id": "Start",
+      "position": {
+        "x": -26.268703627877414,
+        "y": -16.734387571457972
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "FlowerRoute",
+        "widgets": []
+      },
+      "type": "FlowerRoute",
+      "sourceType": "FlowerRoute"
+    },
+    "login": {
+      "id": "login",
+      "position": {
+        "x": -43.39682403425887,
+        "y": 217.68944501656213
+      },
+      "animated": false,
+      "_metadata": {
+        "color": "#79c418"
+      },
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode"
+    },
+    "loginPartner": {
+      "id": "loginPartner",
+      "position": {
+        "x": -19.546532039666147,
+        "y": 593.62896472468
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "Login",
+        "widgets": [],
+        "icon": "GlobeIcon"
+      },
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction"
+    },
+    "resetPasswordForm": {
+      "id": "resetPasswordForm",
+      "position": {
+        "x": 394.7217201994706,
+        "y": 496.758583602256
+      },
+      "animated": false,
+      "_metadata": {},
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode"
+    },
+    "checkEmail": {
+      "id": "checkEmail",
+      "position": {
+        "x": 438.7137925129184,
+        "y": 663.8731580119808
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "sendResetPassword": {
+      "id": "sendResetPassword",
+      "position": {
+        "x": 242.73268780467282,
+        "y": 883.1486014714138
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "resetPasswordEmailResponse": {
+      "id": "resetPasswordEmailResponse",
+      "position": {
+        "x": 62.16115941438488,
+        "y": 1116.5201513398492
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "resetPasswordFailed": {
+      "id": "resetPasswordFailed",
+      "position": {
+        "x": 431.650798430927,
+        "y": 1120.7923591573326
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "getTokenRegistration": {
+      "id": "getTokenRegistration",
+      "position": {
+        "x": -591.7687417452947,
+        "y": 163.8424911427594
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "GetRegisterInformation",
+        "widgets": []
+      },
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction"
+    },
+    "Registration": {
+      "id": "Registration",
+      "position": {
+        "x": -842.963826148964,
+        "y": 381.3589930954563
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "Registration",
+        "widgets": []
+      },
+      "type": "FlowerFlow",
+      "sourceType": "FlowerFlow"
+    },
+    "RegistrationConfirm": {
+      "id": "RegistrationConfirm",
+      "position": {
+        "x": -997.3109464088833,
+        "y": 742.5170889701558
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "_metadata": {
+        "name": "FlowerNode",
+        "widgets": []
+      }
+    },
+    "reactflow__edge-Start-login": {
+      "id": "reactflow__edge-Start-login",
+      "label": "◈",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-Start-getTokenRegistration": {
+      "id": "reactflow__edge-Start-getTokenRegistration",
+      "label": "◈",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-login-loginPartner": {
+      "id": "reactflow__edge-login-loginPartner",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-login-resetPasswordForm": {
+      "id": "reactflow__edge-login-resetPasswordForm",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-resetPasswordForm-checkEmail": {
+      "id": "reactflow__edge-resetPasswordForm-checkEmail",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-sendResetPassword-resetPasswordEmailSuccess": {
+      "id": "reactflow__edge-sendResetPassword-resetPasswordEmailSuccess",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-checkEmailprimary-sendResetPasswordprimary": {
+      "id": "reactflow__edge-checkEmailprimary-sendResetPasswordprimary",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-sendResetPasswordprimary-resetPasswordEmailResponseprimary": {
+      "id": "reactflow__edge-sendResetPasswordprimary-resetPasswordEmailResponseprimary",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-checkEmailprimary-resetPasswordFailedprimary": {
+      "id": "reactflow__edge-checkEmailprimary-resetPasswordFailedprimary",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-getTokenRegistration-Registration": {
+      "id": "reactflow__edge-getTokenRegistration-Registration",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-Registrationprimary-RegistrationConfirmprimary": {
+      "id": "reactflow__edge-Registrationprimary-RegistrationConfirmprimary",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    }
+  }
+}

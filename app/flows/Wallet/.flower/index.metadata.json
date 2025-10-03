@@ -1,0 +1,19 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "Wallet",
+  "elements": {
+    "passPreview": {
+      "id": "passPreview",
+      "position": {
+        "x": 190,
+        "y": 0
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    }
+  },
+  "apps": []
+}

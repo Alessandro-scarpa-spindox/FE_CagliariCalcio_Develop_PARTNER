@@ -1,0 +1,13 @@
+{
+    "type": "component",
+    "name": "MatchPreview",
+    "category": "UI",
+    "description": "MatchPreview component",
+    "editing": [
+        {
+            "type": "Input",
+            "id": "id",
+            "label": "Match Id"
+        }
+    ]
+}

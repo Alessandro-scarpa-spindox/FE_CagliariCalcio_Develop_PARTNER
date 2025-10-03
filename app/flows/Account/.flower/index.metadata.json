@@ -1,0 +1,105 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "account",
+  "apps": [],
+  "elements": {
+    "getCurrentUser": {
+      "id": "getCurrentUser",
+      "position": {
+        "x": 189.4500760841212,
+        "y": -276.05239629907607
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "GetCurrentUser",
+        "widgets": []
+      },
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction"
+    },
+    "accountInfo": {
+      "id": "accountInfo",
+      "position": {
+        "x": 174.46567309096002,
+        "y": -18.989445184904973
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "FlowerNode",
+        "widgets": []
+      },
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode"
+    },
+    "sendResetEmail": {
+      "id": "sendResetEmail",
+      "position": {
+        "x": 171.74125605329377,
+        "y": 224.76579269896365
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "resetConfirm": {
+      "id": "resetConfirm",
+      "position": {
+        "x": 155.39465294791464,
+        "y": 449.5315853979271
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "AccountInfo": {
+      "id": "AccountInfo",
+      "position": {
+        "x": 1520,
+        "y": 0
+      },
+      "animated": false,
+      "type": "FlowerContainer",
+      "sourceType": "FlowerContainer",
+      "_metadata": {}
+    },
+    "reactflow__edge-getCurrentUser-accountInfo": {
+      "id": "reactflow__edge-getCurrentUser-accountInfo",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-accountInfo-sendResetEmail": {
+      "id": "reactflow__edge-accountInfo-sendResetEmail",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-sendResetEmail-resetConfirm": {
+      "id": "reactflow__edge-sendResetEmail-resetConfirm",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    }
+  }
+}

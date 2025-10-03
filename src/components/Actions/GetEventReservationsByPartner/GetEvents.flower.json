@@ -1,0 +1,6 @@
+{
+    "type": "component",
+    "name": "GetEventReservationsByPartner",
+    "isAction": true,
+    "editing":[]
+}

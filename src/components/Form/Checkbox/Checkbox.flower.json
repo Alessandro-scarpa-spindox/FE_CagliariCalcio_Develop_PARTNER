@@ -1,0 +1,23 @@
+{
+  "type": "component",
+  "name": "Checkbox",
+  "category": "Form",
+  "description": "Checkbox component",
+  "editing": [
+    {
+      "type": "Input",
+      "id": "id",
+      "label": "Field name"
+    },
+    {
+      "type": "Input",
+      "id": "label",
+      "label": "Label"
+    },
+    {
+      "type": "Rules",
+      "id": "validate",
+      "label": "Validation rules"
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+export const hexToColor = {
+  '#a52838': 'Rosso',
+  '#1155AA': 'Blu',
+  '#41cf21': 'Verde',
+  '#FFD700': 'Giallo',
+  '#02090f': 'Nero',
+  '#fe4eda': 'Magenta',
+  '#00b7d6': 'Ciano',
+  '#8f00ff': 'Viola',
+  '#ffffff': 'Bianco',
+  '#ff8800': 'Arancione',
+  '#C0C0C0': 'Argento',
+  '#A9A9A9': 'Grigio',
+  '#e8b923': 'Oro',
+}

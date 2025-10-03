@@ -1,0 +1,18 @@
+{
+    "type": "component",
+    "name": "GuestsList",
+    "category": "UI",
+    "description": "Guests list",
+    "editing": [
+        {
+            "type": "Input",
+            "id": "id",
+            "label": "Selettore ospiti"
+        },
+        {
+            "type": "Rules",
+            "id": "rules",
+            "label": "Regole di visualizzazione"
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+    "type": "component",
+    "name": "Login",
+    "isAction": true,
+    "editing":[
+        {
+            "type": "Input",
+            "id":"credentialsId",
+            "label":"Credentials Id"
+        }
+    ]
+}

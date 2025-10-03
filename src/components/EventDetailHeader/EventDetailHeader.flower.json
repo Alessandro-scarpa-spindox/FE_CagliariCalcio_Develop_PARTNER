@@ -1,0 +1,36 @@
+{
+  "type": "component",
+  "name": "EventDetailHeader",
+  "category": "UI",
+  "description": "EventDetailHeader component",
+  "editing": [
+    {
+      "type": "Input",
+      "id": "id",
+      "label": "ID"
+    },
+    {
+      "type": "ButtonGroup",
+      "id": "action",
+      "label": "Action",
+      "options": [
+        {
+          "label": "Next",
+          "value": "next"
+        },
+        {
+          "label": "Back",
+          "value": "back"
+        },
+        {
+          "label": "Jump",
+          "value": "jump"
+        },
+        {
+          "label": "Restart",
+          "value": "restart"
+        }
+      ]
+    }
+  ]
+}

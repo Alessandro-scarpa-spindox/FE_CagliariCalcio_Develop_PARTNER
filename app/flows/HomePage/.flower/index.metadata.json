@@ -1,0 +1,69 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "homePage",
+  "apps": [],
+  "elements": {
+    "getEvents": {
+      "id": "getEvents",
+      "position": {
+        "x": 117.16902189140802,
+        "y": -134.28527352303152
+      },
+      "animated": false,
+      "_metadata": {
+        "name": "GetEvents",
+        "widgets": []
+      },
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction"
+    },
+    "home": {
+      "id": "home",
+      "position": {
+        "x": 97.47703162006883,
+        "y": 139.43285553873594
+      },
+      "animated": false,
+      "_metadata": {},
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode"
+    },
+    "reactflow__edge-getEvents-getSpaces": {
+      "id": "reactflow__edge-getEvents-getSpaces",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-home-goToDetail": {
+      "id": "reactflow__edge-home-goToDetail",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-getEventsprimary-homeprimary": {
+      "id": "reactflow__edge-getEventsprimary-homeprimary",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    }
+  }
+}

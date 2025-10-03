@@ -1,0 +1,33 @@
+{
+    "type": "component",
+    "name": "Icon",
+    "category": "UI",
+    "description": "Icon component",
+    "editing": [
+        {
+            "type": "Rules",
+            "id": "rules",
+            "label": "Regole di visualizzazione"
+        },
+        {
+            "type": "Input",
+            "id": "name",
+            "label": "Icon name"
+        },
+        {
+            "type": "Input",
+            "id": "colorKey",
+            "label": "Color key"
+        },
+        {
+            "type": "Input",
+            "id": "fill",
+            "label": "Fill"
+        },
+        {
+            "type": "Input",
+            "id": "size",
+            "label": "Icon size"
+        }
+    ]
+}

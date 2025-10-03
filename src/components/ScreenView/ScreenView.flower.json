@@ -1,0 +1,13 @@
+{
+    "type": "component",
+    "name": "ScreenView",
+    "category": "UI",
+    "description": "Input component",
+    "editing": [
+        {
+            "type": "Switch",
+            "id": "centerContent",
+            "label": "Center Content"
+        }
+    ]
+}

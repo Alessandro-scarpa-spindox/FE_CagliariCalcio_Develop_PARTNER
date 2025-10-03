@@ -1,0 +1,7 @@
+export const LOGIN_ERROR_KEY = 'login-error'
+export const LOUNGE_ERROR = 'lounge-error'
+export const MAXGUEST_ERROR = 'max-guests-error'
+export const PREVEVENTGUEST_CONFIRM = 'prev-event-guests-confirmation'
+export const SENDMAIL_SINGLEPASS = 'sendmail-guest-singlepass'
+export const SENDMAIL_ALLPASSES = 'send-guests-ALLPASSES'
+export const PRIVACY_CONSENT = 'privacy-consent'

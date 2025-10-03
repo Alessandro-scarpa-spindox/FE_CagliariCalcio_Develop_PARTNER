@@ -1,0 +1,65 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "showEventPass",
+  "elements": {
+    "getGuestData": {
+      "id": "getGuestData",
+      "position": {
+        "x": 190,
+        "y": 0
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "showEventPass": {
+      "id": "showEventPass",
+      "position": {
+        "x": 60.153846153846104,
+        "y": 231.4180995475113
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "errorShowEventPass": {
+      "id": "errorShowEventPass",
+      "position": {
+        "x": 408.8226244343891,
+        "y": 232.67239819004527
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "reactflow__edge-getGuestData-showEventPass": {
+      "id": "reactflow__edge-getGuestData-showEventPass",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-getGuestData-errorShowEventPass": {
+      "id": "reactflow__edge-getGuestData-errorShowEventPass",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    }
+  },
+  "apps": []
+}

@@ -1,0 +1,42 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "nav",
+  "elements": {
+    "Onboarding": {
+      "id": "Onboarding",
+      "position": {
+        "x": 362.89202825428856,
+        "y": -67.39858728557013
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "Screen",
+      "_metadata": {}
+    },
+    "MatchDetail": {
+      "id": "MatchDetail",
+      "position": {
+        "x": 305.2754793138244,
+        "y": 108.91220988900102
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "Screen",
+      "_metadata": {}
+    },
+    "reactflow__edge-Onboarding-MatchDetail": {
+      "id": "reactflow__edge-Onboarding-MatchDetail",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    }
+  },
+  "apps": []
+}

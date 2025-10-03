@@ -1,0 +1,45 @@
+{
+  "type": "component",
+  "name": "Dropdown",
+  "category": "Form",
+  "description": "Dropdown component",
+  "editing": [
+    {
+      "type": "Input",
+      "id": "id",
+      "label": "Field name"
+    },
+    {
+      "type": "Input",
+      "id": "values",
+      "label": "Selettore"
+    },
+    {
+      "type": "Input",
+      "id": "placeholder",
+      "label": "Placeholder"
+    },
+    {
+      "type": "List",
+      "id": "options",
+      "label": "Options",
+      "item": [
+        {
+          "type": "Input",
+          "id": "name",
+          "label": "name"
+        },
+        {
+          "type": "Input",
+          "id": "value",
+          "label": "value"
+        }
+      ]
+    },
+    {
+      "type": "Rules",
+      "id": "validate",
+      "label": "Validation rules"
+    }
+  ]
+}

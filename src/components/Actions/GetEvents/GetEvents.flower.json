@@ -1,0 +1,6 @@
+{
+    "type": "component",
+    "name": "GetEvents",
+    "isAction": true,
+    "editing":[]
+}

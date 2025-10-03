@@ -1,0 +1,42 @@
+{
+    "type": "component",
+    "name": "IconButton",
+    "category": "UI",
+    "description": "IconButton component",
+    "editing": [
+        {
+            "type": "Input",
+            "id": "icon",
+            "label": "Icon"
+        },
+        {
+            "type": "ButtonGroup",
+            "id": "action",
+            "label": "Action",
+            "options": [
+                {
+                    "label": "Next",
+                    "value": "next"
+                },
+                {
+                    "label": "Back",
+                    "value": "back"
+                },
+                {
+                    "label": "Jump",
+                    "value": "jump"
+                },
+                {
+                    "label": "Restart",
+                    "value": "restart"
+                }
+            ]
+
+        },
+        {
+            "type": "Rules",
+            "id": "rules",
+            "label": "Regole di visualizzazione"
+        }
+    ]
+}

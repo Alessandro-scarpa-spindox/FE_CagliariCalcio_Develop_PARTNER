@@ -1,0 +1,113 @@
+{
+  "//": "Do not publish this file",
+  "type": "flow",
+  "name": "Registration",
+  "apps": [],
+  "elements": {
+    "getPartnerData": {
+      "id": "getPartnerData",
+      "position": {
+        "x": 0,
+        "y": -1.5008767648491457
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "registration": {
+      "id": "registration",
+      "position": {
+        "x": 0,
+        "y": 350
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "registerPartner": {
+      "id": "registerPartner",
+      "position": {
+        "x": 0,
+        "y": 700
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "loginNewPartner": {
+      "id": "loginNewPartner",
+      "position": {
+        "x": 0,
+        "y": 1050
+      },
+      "animated": false,
+      "type": "FlowerAction",
+      "sourceType": "FlowerAction",
+      "_metadata": {}
+    },
+    "registrationError": {
+      "id": "registrationError",
+      "position": {
+        "x": 352.4471393665649,
+        "y": 188.4297312254966
+      },
+      "animated": false,
+      "type": "FlowerNode",
+      "sourceType": "FlowerNode",
+      "_metadata": {}
+    },
+    "reactflow__edge-getPartnerData-registration": {
+      "id": "reactflow__edge-getPartnerData-registration",
+      "label": "◈",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-registration-registerPartner": {
+      "id": "reactflow__edge-registration-registerPartner",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-registerPartner-loginNewPartner": {
+      "id": "reactflow__edge-registerPartner-loginNewPartner",
+      "label": "+",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {}
+    },
+    "reactflow__edge-getPartnerDataprimary-registrationErrorprimary": {
+      "id": "reactflow__edge-getPartnerDataprimary-registrationErrorprimary",
+      "label": "◈",
+      "animated": false,
+      "style": {
+        "stroke": "#97A3AC"
+      },
+      "labelStyle": {
+        "fill": "#97A3AC"
+      },
+      "_metadata": {
+        "status": "default"
+      }
+    }
+  }
+}

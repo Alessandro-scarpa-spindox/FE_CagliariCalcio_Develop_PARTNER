@@ -1,0 +1,6 @@
+{
+    "type": "component",
+    "name": "GetCurrentUser",
+    "isAction": true,
+    "editing":[]
+}

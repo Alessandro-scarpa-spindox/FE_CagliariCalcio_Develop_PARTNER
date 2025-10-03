@@ -1,0 +1,6 @@
+{
+    "type": "component",
+    "name": "GetSpaces",
+    "isAction": true,
+    "editing": []
+}

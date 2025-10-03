@@ -1,0 +1,33 @@
+{
+    "type": "component",
+    "name": "Input",
+    "category": "Form",
+    "description": "Input component",
+    "editing": [
+        {
+            "type": "Input",
+            "id": "id",
+            "label": "Field name"
+        },
+        {
+            "type": "Input",
+            "id": "label",
+            "label": "Label"
+        },
+        {
+            "type": "Input",
+            "id": "placeholder",
+            "label": "Placeholder"
+        },
+        {
+            "type": "Switch",
+            "id": "secureText",
+            "label": "Secure Text Entry"
+        },
+        {
+            "type": "Rules",
+            "id": "validate",
+            "label": "Validation rules"
+        }
+    ]
+}
