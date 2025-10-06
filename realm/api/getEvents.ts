@@ -25,10 +25,11 @@ export const watchEventChanges = async (
     'events',
   )
   const changeStream = eventsCollection.watch()
-
+  console.log('changeStream', changeStream)
   const processChanges = async () => {
     try {
       for await (const change of changeStream) {
+        console.log('new change', change)
         callback(change)
       }
     } catch (error) {
