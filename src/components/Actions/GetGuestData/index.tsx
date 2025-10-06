@@ -1,8 +1,8 @@
-import { getPassInformations } from '@/api/getPassInformations'
-import { LoadingView } from '@/components/LoadingView'
 import { useFlower, useFlowerForm } from '@flowerforce/flower-react'
 import dayjs from 'dayjs'
 import { useCallback, useEffect } from 'react'
+import { LoadingView } from '@/components/LoadingView'
+import { getPassInformations } from '@/api/getPassInformations'
 
 export const GetPassData = () => {
   const { next } = useFlower()
@@ -25,7 +25,7 @@ export const GetPassData = () => {
 
       next('onError')
     }
-  }, [next, setData])
+  }, [guestId, next, setData])
 
   useEffect(() => {
     checkPassInformations()
