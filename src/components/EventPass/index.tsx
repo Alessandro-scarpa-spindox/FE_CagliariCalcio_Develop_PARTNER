@@ -2,6 +2,9 @@ import { ScrollView, StyleSheet, useWindowDimensions, View } from 'react-native'
 import { FlowerValue, useFlowerForm } from '@flowerforce/flower-react'
 import dayjs from 'dayjs'
 import { useNavigation } from 'expo-router'
+import { useCallback } from 'react'
+import * as Clipboard from 'expo-clipboard'
+import Toast from 'react-native-toast-message'
 import { QrCode } from '../QrCode'
 import { Text } from '../Text'
 import { Stack } from '../Stack'
@@ -9,9 +12,6 @@ import { WalletButton } from '../WalletButton'
 import { Logo } from '../Logo'
 import { IconButton } from '../IconButton'
 import { Color, Colors } from '@/constants/Colors'
-import { useCallback } from 'react'
-import * as Clipboard from 'expo-clipboard'
-import Toast from 'react-native-toast-message'
 
 const darkTextColors = ['#FFD700', '#ffffff', '#C0C0C0']
 
@@ -26,8 +26,8 @@ export const EventPass = ({ guestId }: { guestId?: string }) => {
 
   const copyToClipboard = useCallback(async () => {
     const name = `${ticketGuest?.firstName.replaceAll(' ', '')}${ticketGuest?.lastName.replaceAll(' ', '')}`
-
-    const url = `https://hospitality.cagliaricalcio.com/ticket/${ticketGuest?.id}/${name}`
+    const LINK_PARTNER = process.env.EXPO_PUBLIC_REACT_APP_LINK_PARTNER
+    const url = `${LINK_PARTNER}/ticket/${ticketGuest?.id}/${name}`
 
     await Clipboard.setStringAsync(url)
 

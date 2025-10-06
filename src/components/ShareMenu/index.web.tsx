@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
-import { IconButton } from '../IconButton'
 import { useRoute } from '@react-navigation/native'
 import Toast from 'react-native-toast-message'
+import { IconButton } from '../IconButton'
 
 export const ShareMenu = ({ color }: { color?: string }) => {
   const { params }: Record<string, any> = useRoute()
@@ -13,10 +13,11 @@ export const ShareMenu = ({ color }: { color?: string }) => {
 
     return name
   }, [guest])
+  const LINK_PARTNER = process.env.EXPO_PUBLIC_REACT_APP_LINK_PARTNER
 
   const shareOptions = {
     text: 'Cagliari Calcio Guest Pass',
-    url: `https://hospitality.cagliaricalcio.com/ticket/${guest?.id}/${fullName}`,
+    url: `${LINK_PARTNER}/ticket/${guest?.id}/${fullName}`,
     title: 'Condividi questo pass',
   }
 
