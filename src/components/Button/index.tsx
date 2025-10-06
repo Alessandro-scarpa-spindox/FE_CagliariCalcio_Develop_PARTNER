@@ -6,8 +6,8 @@ import {
 import { useCallback } from 'react'
 import { StyleSheet, Pressable, ViewStyle } from 'react-native'
 import { Text } from '../Text'
-import { Colors } from '@/constants/Colors'
 import { Icon } from '../Icon'
+import { Colors } from '@/constants/Colors'
 
 type ButtonProps = {
   icon?: string
@@ -49,12 +49,12 @@ export const Button = ({
           action && onClick()
         }}
       >
-        {/* @ts-ignore */}
         {icon && <Icon name={icon} />}
-        <Text text={title} color={textColorByVariant[variant]} />
+
+        <Text text={title} color={textColorByVariant[variant] as any} />
       </Pressable>
     ),
-    [action, disabled, onPress, title, variant],
+    [action, disabled, fullWidth, icon, noRadius, onPress, style, title, variant],
   )
   return (
     <FlowerNavigate action={action}>
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
 
 const textColorByVariant = {
   primary: 'text',
-  secondart: 'textLight',
+  secondary: 'textLight',
   text: 'textLight',
+  tertiary: 'textLight',
 }

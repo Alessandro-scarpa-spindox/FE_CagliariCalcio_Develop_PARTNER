@@ -5,8 +5,6 @@ import 'react-native-reanimated'
 import { FlowerProvider } from '@flowerforce/flower-react'
 import { ApplicationProvider } from '@ui-kitten/components'
 import * as eva from '@eva-design/eva'
-//@ts-ignore
-// import { Devtool } from '@flowerforce/devtool'
 import dayjs from 'dayjs'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import 'dayjs/locale/it'
@@ -79,10 +77,6 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
-      /*       Devtool({
-        host: '192.168.1.132',
-        port: 8770,
-      }) */
       SplashScreen.hideAsync()
     }
   }, [loaded])

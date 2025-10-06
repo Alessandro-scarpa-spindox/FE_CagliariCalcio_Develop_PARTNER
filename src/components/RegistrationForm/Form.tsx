@@ -1,13 +1,12 @@
 import React from 'react'
+import { useWindowDimensions } from 'react-native'
+import { CheckBox } from '../Form/Checkbox'
 import { Input } from '@/components/Form/Input'
 import { Stack } from '@/components/Stack'
 import { Button } from '@/components/Button'
 import { Text } from '@/components/Text'
 import { useModalManager } from '@/hooks/useModalManager'
 import { PRIVACY_CONSENT } from '@/constants/modals'
-import { CheckBox } from '../Form/Checkbox'
-import { useMobile } from '@/hooks/useMobile'
-import { useWindowDimensions } from 'react-native'
 
 type Props = {
   email: string
