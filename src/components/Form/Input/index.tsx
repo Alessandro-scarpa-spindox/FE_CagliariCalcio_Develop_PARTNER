@@ -1,13 +1,11 @@
-import { FlowerField, FlowerFieldProps } from '@flowerforce/flower-react'
 import { Input as KInput, InputProps as KittenInputProps } from '@ui-kitten/components'
-
 import { useCallback, useState } from 'react'
 import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { FlowerField, FlowerFieldProps } from '@flowerforce/flower-react'
 import { Icon } from '@/components/Icon'
 import { Text } from '@/components/Text'
 import { Colors } from '@/constants/Colors'
 import { Stack } from '@/components/Stack'
-import dayjs from 'dayjs'
 
 type InputProps = {
   required?: boolean
@@ -57,7 +55,7 @@ export const Input = ({
       onChangeFlower(formattedValue)
       onChangeProp?.(value)
     },
-    [isNumeric, onChangeProp, isDate],
+    [isNumeric, onChangeProp],
   )
 
   const renderLabel = useCallback(

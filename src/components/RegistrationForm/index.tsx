@@ -1,7 +1,6 @@
 import React from 'react'
-import { StyleSheet } from 'react-native'
-import { Form } from './Form'
 import { FlowerValue } from '@flowerforce/flower-react'
+import { Form } from './Form'
 
 type FormData = {
   id: string

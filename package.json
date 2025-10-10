@@ -19,8 +19,8 @@
   "dependencies": {
     "@eva-design/eva": "^2.2.0",
     "@expo/vector-icons": "^14.0.0",
-    "@flowerforce/devtool": "^3.1.4",
-    "@flowerforce/flower-react": "^3.1.1",
+    "@flowerforce/devtool": "3.1.4",
+    "@flowerforce/flower-react": "3.1.1",
     "@react-native-picker/picker": "^2.7.7",
     "@react-navigation/native": "^6.0.2",
     "@realm/react": "^0.7.0",
