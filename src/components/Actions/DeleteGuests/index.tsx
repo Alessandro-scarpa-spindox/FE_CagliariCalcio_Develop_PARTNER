@@ -1,16 +1,11 @@
 import React, { useCallback, useEffect } from 'react'
 import { useFlower, useFlowerForm } from '@flowerforce/flower-react'
 import { LoadingView } from '@/components/LoadingView'
-import { useRealmAuth } from '@/hooks/useRealmAuth'
 import { deleteReservations } from '@/api/deleteReservations'
-import { useNavigation } from 'expo-router'
 
 const DeleteGuests = () => {
-  const { back, next, restart } = useFlower()
-  const { getData, setData } = useFlowerForm()
-  const { currentUser } = useRealmAuth()
-
-  const { reset } = useNavigation()
+  const { next, restart } = useFlower()
+  const { getData } = useFlowerForm()
 
   const onDeleteGuests = useCallback(async () => {
     try {
@@ -22,9 +17,10 @@ const DeleteGuests = () => {
 
       restart()
     } catch (e) {
+      console.log('error delete reservation -', e)
       next('onError')
     }
-  }, [getData, setData, next, back, restart, currentUser])
+  }, [getData, next, restart])
 
   useEffect(() => {
     onDeleteGuests()

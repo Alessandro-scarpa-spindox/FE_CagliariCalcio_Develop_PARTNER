@@ -1,18 +1,17 @@
 import React, { useCallback, useEffect } from 'react'
 import { useFlower, useFlowerForm } from '@flowerforce/flower-react'
 import dayjs from 'dayjs'
-import { getEventDetail } from '@/api/getEventData'
-import { LoadingView } from '@/components/LoadingView'
-import { useRealmAuth } from '@/hooks/useRealmAuth'
-import { Guest } from '@/model/Events'
 import { nanoid } from 'nanoid'
 import customParseFormat from 'dayjs/plugin/customParseFormat'
 import Toast from 'react-native-toast-message'
+import { getEventDetail } from '@/api/getEventData'
+import { LoadingView } from '@/components/LoadingView'
+import { useRealmAuth } from '@/hooks/useRealmAuth'
 
 dayjs.extend(customParseFormat)
 const CheckEventExists = () => {
-  const { back, next, restart } = useFlower()
-  const { getData, setData } = useFlowerForm()
+  const { next, restart } = useFlower()
+  const { getData } = useFlowerForm()
   const { currentUser } = useRealmAuth()
 
   const checkEventExists = useCallback(async () => {
@@ -30,7 +29,7 @@ const CheckEventExists = () => {
           text2: "La prenotazione dell'evento è bloccata",
         })
 
-        restart
+        restart()
       }
 
       if (currentUser) {
@@ -39,7 +38,7 @@ const CheckEventExists = () => {
     } catch (e) {
       next('onError')
     }
-  }, [getData, setData, next, restart, currentUser])
+  }, [getData, next, restart, currentUser])
 
   useEffect(() => {
     checkEventExists()

@@ -15,12 +15,9 @@ export const HomePage = withBackgroundImage(() => {
   const { getData, setData } = useFlowerForm({ flowName: 'homePage' })
   useEffect(() => {
     const onClose = watchAllEventsChanges((change: any) => {
-      console.log('change', change)
       const { fullDocument } = change
 
       const prevEvents = getData('events') ?? []
-
-      console.log('prevents', prevEvents)
 
       const updatedEvents = prevEvents.map((event: Event) =>
         event.id === fullDocument._id.toString()

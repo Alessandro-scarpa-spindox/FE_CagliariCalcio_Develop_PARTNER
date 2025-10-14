@@ -1,9 +1,9 @@
-import { getRegisterInformation } from '@/api/getRegisterInformation'
-import { LoadingView } from '@/components/LoadingView'
 import { useFlower, useFlowerForm } from '@flowerforce/flower-react'
 import { useNavigation } from '@react-navigation/native'
 import { useCallback, useEffect } from 'react'
 import Toast from 'react-native-toast-message'
+import { LoadingView } from '@/components/LoadingView'
+import { getRegisterInformation } from '@/api/getRegisterInformation'
 
 export const GetRegisterInformationList = () => {
   const { next, restart } = useFlower()
@@ -26,7 +26,7 @@ export const GetRegisterInformationList = () => {
       restart()
       navigate('OnBoarding')
     }
-  }, [next, setData])
+  }, [getData, navigate, next, restart, setData, unsetData])
 
   useEffect(() => {
     checkRegisterInformation()

@@ -48,7 +48,7 @@ export const GetGuestsPreviousEvent = () => {
       }
       setData(spreadGuests, 'tempGuests')
     } catch (e) {
-      console.log(e)
+      console.log('error GetGuestsPreviousEvent - ', e)
     } finally {
       return back()
     }

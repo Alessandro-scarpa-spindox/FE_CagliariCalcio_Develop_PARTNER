@@ -39,7 +39,7 @@ export const GetLoungeData = () => {
     } finally {
       next()
     }
-  }, [next, setData, currentUser?.partnerData.maxGuests, getData, currentUser?.partnerId])
+  }, [getWalletData, getData, currentUser?.partnerId, setData, next])
 
   useEffect(() => {
     getLoungeData()

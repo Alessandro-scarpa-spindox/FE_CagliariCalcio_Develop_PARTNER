@@ -1,11 +1,11 @@
 import { FlowerComponent, FlowerValue } from '@flowerforce/flower-react'
 import { useCallback } from 'react'
+import { useWindowDimensions } from 'react-native'
 import { get } from '../../../../utils/get'
 import { Stack } from '@/components/Stack'
 import { User } from '@/model/Users'
 import { Text } from '@/components/Text'
 import { Button } from '@/components/Button'
-import { useWindowDimensions } from 'react-native'
 
 export const AccountInfo = () => {
   const renderContent = useCallback((user: User) => {

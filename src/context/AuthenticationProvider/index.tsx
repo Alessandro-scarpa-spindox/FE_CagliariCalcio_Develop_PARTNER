@@ -41,7 +41,7 @@ export const AuthenticationProvider = ({
             navigate('OnBoarding')
           }
         } catch (err) {
-          console.log('❌ refresh/token error:', err)
+          console.log('refresh/token error:', err)
           await app.currentUser.logOut()
           setIsAuthenticated(false)
           setCurrentUser(undefined)
