@@ -2,10 +2,7 @@ import React, { useCallback, useEffect } from 'react'
 import { useFlower, useFlowerForm } from '@flowerforce/flower-react'
 import Toast from 'react-native-toast-message'
 import { LoadingView } from '@/components/LoadingView'
-import {
-  checkIsReservationEnabled,
-  watchEventChanges,
-} from '@/api/checkIsReservationEnabled'
+import { checkIsReservationEnabled } from '@/api/checkIsReservationEnabled'
 
 export const CheckIsReservationEnabled = () => {
   const { next, back } = useFlower()
@@ -28,24 +25,9 @@ export const CheckIsReservationEnabled = () => {
     }
   }, [getData, setData, back, next])
 
-  const checkEvent = useCallback(async () => {
-    const eventId = getData('event.id')
-    try {
-      await watchEventChanges(eventId, (change: any) => {
-        // ho messo any ordinato dal Dott. Scarpa, da fixare
-        const { status, ticket } = change.fullDocument
-        setData(status, 'event.status')
-        setData(ticket, 'event.ticket')
-      })
-    } catch (error: any) {
-      throw new Error(error)
-    }
-  }, [getData, setData])
-
   useEffect(() => {
     checkReservation()
-    checkEvent()
-  }, [checkEvent, checkReservation])
+  }, [checkReservation])
 
   return <LoadingView />
 }

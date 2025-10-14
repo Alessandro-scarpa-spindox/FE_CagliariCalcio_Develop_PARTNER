@@ -17,8 +17,7 @@ export const getEvents = async () => {
   return events.map(({ _id, ...event }) => ({ id: _id?.toString(), ...event }))
 }
 
-export const watchEventChanges = async (
-  events: string[],
+export const watchAllEventsChanges = async (
   callback: (change: Realm.Services.MongoDB.ChangeEvent<EventDocument | any>) => void,
 ): Promise<() => void> => {
   const eventsCollection = db(process.env.EXPO_PUBLIC_REACT_APP_DB).collection<Events>(
@@ -35,7 +34,6 @@ export const watchEventChanges = async (
     } catch (error) {
       console.log('error message: ', error)
       return getEvents()
-      // throw new Error(error)
     }
   }
 

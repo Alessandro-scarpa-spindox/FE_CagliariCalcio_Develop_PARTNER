@@ -10,7 +10,7 @@ import { useNavigation, useRoute } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Card } from '@ui-kitten/components'
 import { ScrollView, useWindowDimensions } from 'react-native'
-import { useCallback, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import { AnimatedScrollView } from 'react-native-reanimated/lib/typescript/reanimated2/component/ScrollView'
 import { Text } from '@/components/Text'
 import { Stack } from '@/components/Stack'
@@ -42,10 +42,11 @@ import { Guest } from '@/model/Events'
 import UpsertGuests from '@/components/Actions/UpsertGuests'
 import DeleteGuests from '@/components/Actions/DeleteGuests'
 import { GetReservations } from '@/components/Actions/GetReservations'
+import { watchEventChanges } from '@/api/checkIsReservationEnabled'
 
 export const MatchDetail = withBackgroundImage(() => {
   const { next } = useFlower({ flowName: 'matchDetail' })
-  const { getData } = useFlowerForm({ flowName: 'matchDetail' })
+  const { getData, setData } = useFlowerForm({ flowName: 'matchDetail' })
   const { params }: Record<string, any> = useRoute()
   const { event } = params || {}
   const { currentUser } = useRealmAuth()
@@ -65,6 +66,17 @@ export const MatchDetail = withBackgroundImage(() => {
     next('onGetPrevious')
     closeGuestsModal()
   }, [next, closeGuestsModal])
+
+  useEffect(() => {
+    const onClose = watchEventChanges(event.id, (change: any) => {
+      const { status, ticket } = change.fullDocument
+      setData(status, 'event.status')
+      setData(ticket, 'event.ticket')
+    })
+    return () => {
+      onClose.then((callback) => callback())
+    }
+  }, [event, setData])
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
