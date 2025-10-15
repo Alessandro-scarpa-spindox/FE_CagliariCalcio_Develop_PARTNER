@@ -38,7 +38,7 @@ import { Modal } from '@/components/Modal'
 import { Colors } from '@/constants/Colors'
 import GetPreviousEventData from '@/components/Actions/GetPreviousEventData'
 import { SendTicketsByEmail } from '@/components/Actions/SendTicketsByEmail'
-import { Guest } from '@/model/Events'
+import { Event, Guest } from '@/model/Events'
 import UpsertGuests from '@/components/Actions/UpsertGuests'
 import DeleteGuests from '@/components/Actions/DeleteGuests'
 import { GetReservations } from '@/components/Actions/GetReservations'
@@ -47,6 +47,10 @@ import { watchEventChanges } from '@/api/checkIsReservationEnabled'
 export const MatchDetail = withBackgroundImage(() => {
   const { next } = useFlower({ flowName: 'matchDetail' })
   const { getData, setData } = useFlowerForm({ flowName: 'matchDetail' })
+  const { getData: getHomeData, setData: setHomeData } = useFlowerForm({
+    flowName: 'homePage',
+  })
+
   const { params }: Record<string, any> = useRoute()
   const { event } = params || {}
   const { currentUser } = useRealmAuth()
@@ -69,14 +73,20 @@ export const MatchDetail = withBackgroundImage(() => {
 
   useEffect(() => {
     const onClose = watchEventChanges(event.id, (change: any) => {
-      const { status, ticket } = change.fullDocument
+      const { status, ticket, _id } = change.fullDocument
       setData(status, 'event.status')
       setData(ticket, 'event.ticket')
+      const allEvents = getHomeData('events')
+
+      const updatedEvents = allEvents.map((currentEvent: Event) =>
+        currentEvent.id === _id.toString() ? { ...currentEvent, status } : currentEvent,
+      )
+      setHomeData(updatedEvents, 'events')
     })
     return () => {
       onClose.then((callback) => callback())
     }
-  }, [event, setData])
+  }, [event, getHomeData, setData, setHomeData])
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

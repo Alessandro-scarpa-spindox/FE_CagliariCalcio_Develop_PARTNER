@@ -37,7 +37,7 @@ export const AuthenticatedStack = withBackgroundImage(() => {
       }}
       documentTitle={{
         formatter: (options, route) =>
-          `${options ? options.title ?? `${route?.name} -` : ''} Cagliari Calcio Partners`,
+          `${options ? (options.title ?? `${route?.name} -`) : ''} Cagliari Calcio Partners`,
       }}
     >
       <Stack.Navigator
@@ -97,6 +97,7 @@ export const AuthenticatedStack = withBackgroundImage(() => {
 })
 
 const HOME_OPTIONS = {
+  unmountOnBlur: true,
   freezeOnBlur: true,
   headerShadowVisible: false,
   headerStyle: {
