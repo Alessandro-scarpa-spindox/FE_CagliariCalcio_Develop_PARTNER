@@ -26,6 +26,7 @@ export type Event = {
   loungeColor: string
   loungeNumber: number
   status: EventStatus
+  ticket: any
 }
 
 export type Events = Event[]

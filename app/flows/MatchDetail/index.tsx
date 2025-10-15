@@ -6,11 +6,11 @@ import {
   useFlowerForm,
   useFlower,
 } from '@flowerforce/flower-react'
-import { useNavigation, useRoute } from '@react-navigation/native'
+import { useIsFocused, useNavigation, useRoute } from '@react-navigation/native'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { Card } from '@ui-kitten/components'
 import { ScrollView, useWindowDimensions } from 'react-native'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useRef } from 'react'
 import { AnimatedScrollView } from 'react-native-reanimated/lib/typescript/reanimated2/component/ScrollView'
 import { Text } from '@/components/Text'
 import { Stack } from '@/components/Stack'
@@ -43,6 +43,7 @@ import UpsertGuests from '@/components/Actions/UpsertGuests'
 import DeleteGuests from '@/components/Actions/DeleteGuests'
 import { GetReservations } from '@/components/Actions/GetReservations'
 import { watchEventChanges } from '@/api/checkIsReservationEnabled'
+import { Change, useEventsChanges } from '@/hooks/useEventsChanges'
 
 export const MatchDetail = withBackgroundImage(() => {
   const { next } = useFlower({ flowName: 'matchDetail' })
@@ -65,14 +66,16 @@ export const MatchDetail = withBackgroundImage(() => {
 
   const maxGuests: number = event.partners?.[currentUser?.partnerId || '']?.guests || 0
   const scrollViewRef = useRef<AnimatedScrollView>(null)
+  const isFocused = useIsFocused()
+  console.log('ISFOCUSED MATCH DETAIL', isFocused)
 
   const confirmPreviousGuests = useCallback(() => {
     next('onGetPrevious')
     closeGuestsModal()
   }, [next, closeGuestsModal])
 
-  useEffect(() => {
-    const onClose = watchEventChanges(event.id, (change: any) => {
+  const processChanges = useCallback(
+    (change: Change) => {
       const { status, ticket, _id } = change.fullDocument
       setData(status, 'event.status')
       setData(ticket, 'event.ticket')
@@ -82,11 +85,11 @@ export const MatchDetail = withBackgroundImage(() => {
         currentEvent.id === _id.toString() ? { ...currentEvent, status } : currentEvent,
       )
       setHomeData(updatedEvents, 'events')
-    })
-    return () => {
-      onClose.then((callback) => callback())
-    }
-  }, [event, getHomeData, setData, setHomeData])
+    },
+    [getHomeData, setData, setHomeData],
+  )
+
+  useEventsChanges(processChanges, isFocused)
 
   return (
     <SafeAreaView style={{ flex: 1 }}>

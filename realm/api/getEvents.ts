@@ -1,5 +1,6 @@
 import { db, Realm } from '../provider'
 import { Events } from '../schema/Events'
+import type { Change } from '@/hooks/useEventsChanges'
 
 type BSONObjectId = string
 type EventStatus = 'enabled' | 'closed'
@@ -17,19 +18,17 @@ export const getEvents = async () => {
   return events.map(({ _id, ...event }) => ({ id: _id?.toString(), ...event }))
 }
 
-export const watchAllEventsChanges = async (
-  callback: (change: Realm.Services.MongoDB.ChangeEvent<EventDocument | any>) => void,
-): Promise<() => void> => {
+export const watchAllEventsChanges = async (callback: (change: Change) => void) => {
   const eventsCollection = db(process.env.EXPO_PUBLIC_REACT_APP_DB).collection<Events>(
     'events',
   )
   const changeStream = eventsCollection.watch()
-  console.log('changeStream', changeStream)
+
   const processChanges = async () => {
     try {
       for await (const change of changeStream) {
         console.log('new change', change)
-        callback(change)
+        callback(change as unknown as Change)
       }
     } catch (error) {
       console.log('error message: ', error)
@@ -39,7 +38,5 @@ export const watchAllEventsChanges = async (
 
   processChanges()
 
-  return () => {
-    changeStream.return(null)
-  }
+  return changeStream
 }

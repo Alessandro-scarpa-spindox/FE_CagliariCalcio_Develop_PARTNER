@@ -4,18 +4,22 @@ import {
   FlowerAction,
   useFlowerForm,
 } from '@flowerforce/flower-react'
-import { useCallback, useEffect } from 'react'
+import { useCallback } from 'react'
+import { useIsFocused } from '@react-navigation/native'
 import { EventsList } from '@/components/EventsList'
 import { withBackgroundImage } from '@/hocs/withLayout'
 import { GetEvents } from '@/components/Actions/GetEvents'
-import { watchAllEventsChanges } from '@/api/getEvents'
 import { Event } from '@/model/Events'
+import { Change, useEventsChanges } from '@/hooks/useEventsChanges'
 
 export const HomePage = withBackgroundImage(() => {
   const { getData, setData } = useFlowerForm({ flowName: 'homePage' })
+  const isFocused = useIsFocused()
+  console.log('ISFOCUSED HOME', isFocused)
 
   const processChanges = useCallback(
-    (change: any) => {
+    (change: Change) => {
+      console.log('change', change)
       const { fullDocument, operationType, documentKey } = change
 
       const prevEvents: Event[] = getData('events') ?? []
@@ -45,13 +49,8 @@ export const HomePage = withBackgroundImage(() => {
     },
     [getData, setData],
   )
-  useEffect(() => {
-    const onClose = watchAllEventsChanges(processChanges)
-    return () => {
-      onClose.then((callback) => callback())
-    }
-  }, [processChanges])
 
+  useEventsChanges(processChanges, isFocused)
   return (
     <Flower name="homePage">
       {/**
