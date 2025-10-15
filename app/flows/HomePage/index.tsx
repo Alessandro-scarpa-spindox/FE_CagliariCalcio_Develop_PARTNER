@@ -15,7 +15,6 @@ import { Change, useEventsChanges } from '@/hooks/useEventsChanges'
 export const HomePage = withBackgroundImage(() => {
   const { getData, setData } = useFlowerForm({ flowName: 'homePage' })
   const isFocused = useIsFocused()
-  console.log('ISFOCUSED HOME', isFocused)
 
   const processChanges = useCallback(
     (change: Change) => {

@@ -42,7 +42,6 @@ import { Event, Guest } from '@/model/Events'
 import UpsertGuests from '@/components/Actions/UpsertGuests'
 import DeleteGuests from '@/components/Actions/DeleteGuests'
 import { GetReservations } from '@/components/Actions/GetReservations'
-import { watchEventChanges } from '@/api/checkIsReservationEnabled'
 import { Change, useEventsChanges } from '@/hooks/useEventsChanges'
 
 export const MatchDetail = withBackgroundImage(() => {
@@ -67,7 +66,6 @@ export const MatchDetail = withBackgroundImage(() => {
   const maxGuests: number = event.partners?.[currentUser?.partnerId || '']?.guests || 0
   const scrollViewRef = useRef<AnimatedScrollView>(null)
   const isFocused = useIsFocused()
-  console.log('ISFOCUSED MATCH DETAIL', isFocused)
 
   const confirmPreviousGuests = useCallback(() => {
     next('onGetPrevious')
@@ -76,17 +74,41 @@ export const MatchDetail = withBackgroundImage(() => {
 
   const processChanges = useCallback(
     (change: Change) => {
-      const { status, ticket, _id } = change.fullDocument
-      setData(status, 'event.status')
-      setData(ticket, 'event.ticket')
-      const allEvents = getHomeData('events')
+      const { operationType, documentKey, fullDocument } = change
+      if (fullDocument && fullDocument._id.toString() === event.id) {
+        setData(fullDocument.status, 'event.status')
+        setData(fullDocument.ticket, 'event.ticket')
+      }
 
-      const updatedEvents = allEvents.map((currentEvent: Event) =>
-        currentEvent.id === _id.toString() ? { ...currentEvent, status } : currentEvent,
+      const prevEvents: Event[] = getHomeData('events')
+
+      if (operationType === 'insert') {
+        setHomeData(
+          [
+            ...prevEvents,
+            { ...change.fullDocument, id: change.fullDocument._id.toString() },
+          ],
+          'events',
+        )
+        return
+      }
+
+      if (operationType === 'delete') {
+        setHomeData(
+          prevEvents.filter(({ id }) => id !== documentKey._id.toString()),
+          'events',
+        )
+        return
+      }
+
+      const updatedEvents = prevEvents.map((currentEvent: Event) =>
+        currentEvent.id === fullDocument?._id.toString()
+          ? { ...currentEvent, status: fullDocument?.status }
+          : currentEvent,
       )
       setHomeData(updatedEvents, 'events')
     },
-    [getHomeData, setData, setHomeData],
+    [event.id, getHomeData, setData, setHomeData],
   )
 
   useEventsChanges(processChanges, isFocused)
